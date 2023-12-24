@@ -77,7 +77,7 @@
 \author[3,4]{Johanna B. Holm\ORCID{0000-0002-7646-4085}}
 \author[5]{Christina Pavloudi\ORCID{0000-0001-5106-6067}}
 \author[6]{Haris Zafeiropoulos\ORCID{0000-0002-4405-6802}}
-\author[1]{Christos Christakis\ORCID{0000-0002-7075-0996}}
+\author[1]{Christos A. Christakis\ORCID{0000-0002-7075-0996}}
 \author[1]{Melanthia Stavroulaki\ORCID{0000-0003-4392-7159}}
 \author[7]{Stephanie A. Yarwood\ORCID{0000-0003-4593-7908}}
 \author[2]{Antonios Magoulas}
@@ -158,11 +158,12 @@ biodiversity, to evaluate hotspots and contribute to foreknowledge of threatened
 
 \section{Introduction}\label{intro}
 
-The island of Crete, Greece has been studied since the classical times for its' fauna \citep{Sidiropoulos_Polymeni_Legakis_2017}, flora \citep{Krimbas_2005} and ecosystems \citep{Grove1993}.
-Crete is a continental island, fifth largest island of the mediterranean, a mediterranean biodiversity hotspot, model for desertification and climate change, elevation gradient, grasing impacts on ecosystems and evolutionary model.
+The island of Crete, Greece has been studied since the classical times for its' fauna \citep{Sidiropoulos_Polymeni_Legakis_2017,Anastasiou2018Tenebrionid}, flora \citep{Krimbas_2005} and ecosystems \citep{Grove1993}.
+Crete is a continental island, fifth largest island of the mediterranean, a mediterranean biodiversity hotspot, model for desertification, climate change \citep{Kougioumoutzis2020} and habitat loss \citep{ISPIKOUDIS1993259},
+elevation gradient \citep{trigas2013, FAZAN2017}, grasing impacts on ecosystems \citep{JouffroyBapicot2016} and evolutionary model \citep{POULAKAKIS2002}.
 Yet the terrestrial microbial diversity has been unexplored.
 
-Has been sampled from major worldwide projects of microbiome studies. 
+Has been sampled from major worldwide projects of microbiome studies \citep{Vasar2022, Labouyrie2023, Bahram2018, Orgiazzi2018}. Soil fungi \citep{Mikryukov2023, Davison2021, Tedersoo2021} and other soil eukaryotes \citep{Aslani2022}
 
 Global soil microbiome studies \citep{Delgado-Baquerizo2018} and \citep{Bahram2018} and the biogeography \citep{Martiny2006} \citep{Guerra2020}, \citep{Labouyrie2023} yet there are significant blind spots \citep{Guerra2020}. The most resolute study is \citep{Karimi2020}
 
@@ -170,7 +171,8 @@ Islands are nature's labs \citep{Whittaker2017} and in soil microbes \citep{Li20
 Ultimately islands can set the ground to represent ecosystems with data and complex interactions \citep{Davies2016}.
 
 
-Genome Standards Consortium, FAIR data, unrestricted, rich metadata
+Genome Standards Consortium \citep{Field2011}, FAIR data \citep{Wilkinson2016}, unrestricted \citep{Amann2019},
+rich metadata and platforms of hosting open data like European Soil Data Centre \citep{Panagos2022}
 
 Here we present
 
@@ -179,11 +181,43 @@ Here we present
 
 \section{Materials and Methods}\label{methods}
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
-\subsection{Island Sampling Day: Crete}\label{subsec1}
+\subsection{Island Sampling Day: Crete}\label{isd_data}
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+the data for this study have been deposited in the European Nucleotide Archive (ENA) at EMBL-EBI under accession number PRJEB21776
+ENA API \citep{Yuan2023}
+
+\subsection{Data integration}\label{data}
+
+Copernicus CORINE Land Cover \citep{CLC2023}
+WorldClim 2.0 \citep{Fick2017}
+World Database on Protected Areas (WDPA) \citep{Hanson2022}
+Function annotation - FAPROTAX \citep{Louca2016}
+Crete geology from IGME
+Aridity
+%NDVI
+Taxonomy Silva 138 \citep{Quast2012}
+
+\subsection{Tools}\label{tools}
+dada2 for ASV inferrence \citep{Callahan2016}
+PEMA for OTU inferrence \citep{Zafeiropoulos2020}
+ape R packege \citep{Paradis2004}
+SRS R package \citep{Beule2020}
+UMAP ordination \citep{mcinnes2018umap-software}
+Numerical ecology analyses with vegan R package \citep{vegan}
+
+Python 3.11.4
+Julia Version 1.9.3 \citep{Julia-2017}
+R version 4.3.2 \citep{rcoreteam}
+Network inferrence using FlashWeave 0.19.2 \citep{Tackmann2019}
+Network analysis in igraph R package \citep{Csardi2006}
+Differential abundance analysis with ANCOM-BC R package \citep{Lin2020}
+Spatial analysis with the sf and stars R packages \citep{Pebesma2023}
+U-CIE R package for coloring 3 dimentional data \citep{Koutrouli2022}
+ggplot2 \citep{ggplot22016}
+pheatmap \citep{Kolde2019}
+
+Computations were performed on HPC infrastrure of HCMR \citep{Zafeiropoulos2021}.
 
 \subsubsection{This is an example for third level head - subsubsection head}\label{subsubsec1}
 
@@ -206,18 +240,6 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
-
-\section{Equations}\label{sec4}
-
-Equations in \LaTeX{} can either be inline or set as display equations. For
-inline equations use the \verb+$...$+ commands. Eg: the equation
-$H\psi = E \psi$ is written via the command \verb+$H \psi = E \psi$+.
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
 
 
 \section{Tables}\label{sec5}
@@ -306,8 +328,26 @@ Multiple citations as normal:
 
 \section{Discussion}\label{discussion}
 
+Networks specialists generalists \citep{Barberan2012}
+
+Elevation gradients of biodiversity are known since Humboldt's work \citep{Rahbek2019} 
+yet these patterns remain elusive regarding the soil microbiome \citep{Looby2020, Siles2023}.
+Mostly because it's difficult to isolate other cofounding effects \citep{Nottingham2018}. 
+
+Functions of Richtis gorge are a signal in need to be further investigated.
+
+Enumeratic all biodivarsity \citep{Anthony2023} and decipher the biogeochemical 
+processes and interactions of fauna, flora and microbes \citep{Fry2019, Crowther2019,GRANDY201640,Delgado-Baquerizo2020}
+
+Global hotspots \citep{Guerra2022}
+and soil conservation instead of specific species \citep{Guerra2021}
+and policy \citep{KONINGER2022} across countries \citep{Putten2023}
+
+
 \section{Conclusion}
 
+Mountain peaks soil microbes \citep{Adamczyk2019}
+These studies can act as early warning signals towards public health conserns \citep{Banerjee2023}.
 Some Conclusions here.
 
 %%%%%%%%%%%%%%
