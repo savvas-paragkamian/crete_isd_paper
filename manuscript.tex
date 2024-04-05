@@ -158,18 +158,19 @@ form complex interdependant interactions. Biodiversity of soils covers
 all forms of life, fauna, flora, bacteria, archaea, fungi, viruses. 
 Bacteria and archaea are considered major drivers for the functionality of soil.
 They infuence and are infuenced by their environment and their community structure 
-defies their macroscopic functionality.
+defies their macroscopic functionality \cite{Bahram2018}.
 Global soil microbiome studies have been employed to decipher soil microbiome
 compositions \cite{thompson2017a-communal, Delgado-Baquerizo2018, Labouyrie2023},
 functions \cite{Bahram2018} and biogeography \cite{Martiny2006, Guerra2020}.
 These results showed the remarkable diversity in soils yet there are blind spots \cite{Guerra2020}
 and these sampling are sparce when considering samples per area density. One of most resolute
 study is by \cite{Karimi2020} which exemplified the 
-vast complexity of soil bacterial communuties and the requirement of dense samplings and isolated systems.
+vast complexity of soil bacterial communuties and the requirement of
+dense samplings and isolated systems \cite{Dini-Andreote2021}.
 
 Islands are nature's labs \cite{Whittaker2017} because of their isolation and smaller scale.
 Borrowing this paradigm, soil microbes \cite{Li2020} and mycorrhizal fungi \cite{Delavaux2021} studies
-in islands show the benefits of using islands as models. Ultimately islands canr
+in islands show the benefits of using islands as models. Ultimately islands can
 set the ground to represent ecosystems with data and complex interactions \cite{Davies2016}.
 This was also the case for the Island Sampling Day (ISD) project \cite{holm2024}
 of the Genome Standards Consortium \cite{Field2011}
@@ -239,37 +240,58 @@ Warning signals are also identified for various types of ecosystems.
 
 \section{Materials and Methods}\label{methods}
 
+\begin{figure}[t] 
+    \centering\includegraphics[width=\columnwidth]{crete_soil_microbiome}
+    \caption{Workflow of this study. Data integration of ISD data with multiple types of spatial data. Then, a threefold analysis of function annotations, network analysis and differential abundance. All these data and methods are used to focus on specific taxa, ecosystems and threats.}
+    \label{fig:workflow}
+\end{figure}
+
 \subsection{Island Sampling Day: Crete}\label{isd_data}
 
-The data for this study have been deposited in the European Nucleotide Archive (ENA) at EMBL-EBI under accession number PRJEB21776
-ENA API \cite{Yuan2023}
+This study uses the ISD Crete data that have been deposited
+in the European Nucleotide Archive (ENA) at EMBL-EBI under accession number PRJEB21776.
+The raw sequences (fastq files) and metadata (xml files) were downloaded with custom scripts using the ENA API \cite{Yuan2023}.
+Specific information regarding the ISD sampling, DNA extractions, PCR and sequencing
+are discussed here \cite{holm2024}.
 
-\subsection{Data integration}\label{data}
+Amplicon Sequence Variants were inferred using DADA2 \cite{Callahan2016} for 
+filtering, denoising and chimeric reads removal. Normalisation of the reads
+across samples was implemented with the SRS R package \cite{Beule2020}. Samples
+with less than 10000 reads were removed. ASVs were assigned to taxonomy using 
+DADA2 with Silva 138 \cite{Quast2012}.
 
-Copernicus CORINE Land Cover \cite{CLC2023}
-WorldClim 2.0 \cite{Fick2017}
-World Database on Protected Areas (WDPA) \cite{Hanson2022}
-Function annotation - FAPROTAX \cite{Louca2016}
-Crete geology from IGME
-Aridity
-%NDVI
-Taxonomy Silva 138 \cite{Quast2012}
+\subsection{Crete data cube}\label{data}
+
+The complilation of Crete data cube has multiple spatial data layers of global,
+european, greek or cretan scale. 
+The Copernicus CORINE Land Cover has 3 layers resolution that classify the land
+use and cover in shapefile format \cite{CLC2023}. 
+WorldClim 2.0 contains global climatic data for 12 variables, e.g annual mean
+temperature and annual precipitation \cite{Fick2017}.
+We also utilised teh Environmentally Sensitive Areas Index to desertification (ESAI) 
+of Greece dataset \cite{KARAMESOUTI2018266}. Additionally we included the 
+Global Aridity Index and Potential Evapotranspiration Database \cite{zomer2022version}.
+Crete geology, bedrock formations were downloaded from IGME.
+Handling and analysis of these data was done with the sf and stars R packages \cite{Pebesma2023}.
+%World Database on Protected Areas (WDPA) \cite{Hanson2022}
+%Average NDVI, 2000-2020
+%Harmonized World Soil Database
+\subsection{Network inferrence}\label{network_inferrence}
+
+Network inferrence using FlashWeave 0.19.2 \cite{Tackmann2019}
+Network analysis in igraph R package \cite{Csardi2006}
+Julia Version 1.9.3 \cite{Julia-2017}
 
 \subsection{Tools}\label{tools}
-dada2 for ASV inferrence \cite{Callahan2016}
-PEMA for OTU inferrence \cite{Zafeiropoulos2020}
-ape R packege \cite{Paradis2004}
-SRS R package \cite{Beule2020}
+Function annotation - FAPROTAX \cite{Louca2016}
+%PEMA for OTU inferrence \cite{Zafeiropoulos2020}
+%ape R packege \cite{Paradis2004}
 UMAP ordination \cite{mcinnes2018umap-software}
 Numerical ecology analyses with vegan R package \cite{vegan}
 
 Python 3.11.4
-Julia Version 1.9.3 \cite{Julia-2017}
 R version 4.3.2 \cite{rcoreteam}
-Network inferrence using FlashWeave 0.19.2 \cite{Tackmann2019}
-Network analysis in igraph R package \cite{Csardi2006}
 Differential abundance analysis with ANCOM-BC R package \cite{Lin2020,Lin2023}
-Spatial analysis with the sf and stars R packages \cite{Pebesma2023}
 U-CIE R package for coloring 3 dimentional data \cite{Koutrouli2022}
 ggplot2 \cite{ggplot22016}
 pheatmap \cite{Kolde2019}
@@ -349,18 +371,38 @@ Future works, shotgun metagenomics, long reads, need for even higher resolution 
 %quam, in hendrerit risus eros eget felis.
 %
 %\end{appendices}
+\section{Data and Code}
+The documentation and scripts developed for this study are available in
+\href{https://github.com/savvas-paragkamian/crete_soil_microbiome/}{Crete soil microbiome github repository}.
+This repository contains all the necessary scripts for the data retrieval,
+filtering and ASV inferrence, taxonomy assignment, data integration of spatial data, 
+functional annotation and the subsequent analyses and visualisation.
+Code is structured to be reproducible and interoperable.
 
 \section{Competing interests}
 No competing interest is declared.
 
 \section{Author contributions statement}
-
-Must include all authors, identified by initials, for example:
-S.R. and D.A. conceived the experiment(s),  S.R. conducted the experiment(s), S.R. and D.A. analysed the results.  S.R. and D.A. wrote and reviewed the manuscript.
+Conceptualization: LS, EP, GK, AM;
+Data curation: JH, LS, EP, SY, SP;
+Formal Analysis: SP, JH;
+Funding acquisition: LS, AM, SP;
+Investigation: LS, SY, SP, JH;
+Methodology: SP, GK, EP, LS, SY, CC, CP, HZ, MS;
+Project administration: LS, EP, GK;
+Resources: EP, LS, SY, AM;
+Software: SP, JH, HZ;
+Supervision: LS, EP, GK, PS;
+Validation: JH, CP, CC, HZ, PS, DT, MS, LS;
+Visualization: SP, JH;
+Writing – original draft: SP, EP, GK;
+Writing – review and editing: All authors.
 
 \section{Acknowledgments}
-The authors thank the anonymous reviewers for their valuable suggestions. This work is supported in part by funds from the National Science Foundation (NSF: \# 1636933 and \# 1920920).
+The authors thank the anonymous reviewers for their valuable suggestions.
 
+\section{Funding}
+SP was supported by the 3rd H.F.R.I. Scholarships for PHD Candidates (no. 5726) for his work.
 
 \bibliographystyle{unsrt}
 \bibliography{reference}
