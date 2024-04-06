@@ -114,37 +114,34 @@
 %\textbf{Supplementary information:} Supplementary data are available at \textit{Journal Name}
 %online.}
 
-\abstract{Ecosystem functioning is an integral part of the sciences of climate
-    change and conservation. Microbes are known for their versatility, abundance
-    and influence on ecosystem functions, but a more thorough analysis of
-    ecosystems should include a more complex assembly of organisms.
-    For example, plant-arthropod-soil microbiome interactions are important
-    associations that have historically been ignored. A synthesized knowledge
-    base of biodiversity, in terms of ecological and remote-sensing data remains a
-    major challenge. Many worldwide studies have been published regarding soil
-    microbiome ecosystems, though there are many gaps to cover the complexity
-    of functioning and biodiversity in the local scale. Islands can be
-    important case studies for this integration, from micro to macro, with Crete being a great example. 
+\abstract{
+    Microbes are known for their versatility, abundance
+    and influence on soil ecosystem functioning.
+    A synthesized knowledge base of microbial biodiversity, in terms of
+    ecological and remote-sensing data remains a major challenge.
+    Many worldwide studies have been published regarding soil
+    microbiome ecosystems, though there are still many blind spots.
+    Islands can be important case studies for this integration for more resolute and dense samplings.
     Here, we utilize the Island Sampling Day Crete 2016 microbial 16S rRNA gene
-    amplicon data and metadata, integrated with soil, faunistic and remote
+    amplicon data, integrated with soil and remote
     sensing data, to decipher the drivers of ecosystem function of the island.
-    Cretan macroecology has been studied for centuries for its diverse and
-    unique geology, fauna and flora. In addition, Crete as a continental island,
-    presents a distinct natural and evolutionary history with high contrasts in
-    vegetation cover, climatic conditions and geology. The Island Sampling Day
-    Crete 2016 project (co-hosted by the Genomic Standards Consortium (GSC) and
-    the Institute of Marine Biology, Biotechnology and Aquaculture (IMBBC-HCMR)), has
-    collected microbial 16s amplicon data from 72 distinct, with ecosystem
-    diversity topsoil sites from all around Crete, accompanied by FAIR
+    The Island Sampling Day Crete 2016 project has collected 144 topsoil samples
+    from 72 sites, capturing a lot of this diversity, accompanied by FAIR
     (Findable, Accessible, Interoperable and Reproducible) data by design. 
-    With this island wide study the GSC put the genomic standards in action.
-The preliminary results indicate a notable influence of the pH and the elevation
-over the island's microbiota. In particular, sites in higher altitudes found to
-be inhabited by a more diverse number of microorganisms, a pattern commonly
-seen in several faunistic groups, such as arthropods. These data along with the
-open access data regarding arthropod fauna, flora and the vast data of remote
-sensing and biodiversity, provide the basis to identify major drivers of
-biodiversity, to evaluate hotspots and contribute to foreknowledge of threatened ecosystems.}
+    Cretan macroecology has been studied for centuries for its diverse  and endemic
+    fauna and flora.
+    In addition, Crete has been considered as a miniature continent with high contrasts in
+    vegetation cover, elevation, climatic conditions. 
+    We show that, higher altitudes in Crete found to
+    be inhabited by a more diverse number of microorganisms, a pattern commonly
+    seen in several faunistic groups, such as arthropods.
+    The integration of the spatial data presented here enabled warning signals
+    in pristine and grazing ecosystems.
+    These results along with the
+    climatic and desertification index influences on the soil microbiome of Crete,
+    provide the basis to identify major drivers of biodiversity, to evaluate hotspots
+    and contribute to foreknowledge of threatened ecosystems.
+} 
 
 \keywords{soil microbiome, networks, island biogeography, Crete, data integration, FAIR data}
 
@@ -271,32 +268,32 @@ temperature and annual precipitation \cite{Fick2017}.
 We also utilised teh Environmentally Sensitive Areas Index to desertification (ESAI) 
 of Greece dataset \cite{KARAMESOUTI2018266}. Additionally we included the 
 Global Aridity Index and Potential Evapotranspiration Database \cite{zomer2022version}.
-Crete geology, bedrock formations were downloaded from IGME.
+Crete geological bedrock formations were downloaded from IGME.
 Handling and analysis of these data was done with the sf and stars R packages \cite{Pebesma2023}.
 %World Database on Protected Areas (WDPA) \cite{Hanson2022}
 %Average NDVI, 2000-2020
 %Harmonized World Soil Database
 \subsection{Network inferrence}\label{network_inferrence}
 
-Network inferrence using FlashWeave 0.19.2 \cite{Tackmann2019}
-Network analysis in igraph R package \cite{Csardi2006}
-Julia Version 1.9.3 \cite{Julia-2017}
+The network inferrence was facilitated with FlashWeave 0.19.2 \cite{Tackmann2019}
+in Julia language version 1.9.3 \cite{Julia-2017}. To use FlashWeave we reduced 
+the abandunce table of the ASVs to keep the ones at the genus or species level.
+In addition, we filtered these taxa that appeared in ### samples and had more than 
+#### mean relative abundance. The subsequent network analyses were carried out
+with the igraph R package \cite{Csardi2006}.
 
 \subsection{Tools}\label{tools}
-Function annotation - FAPROTAX \cite{Louca2016}
 %PEMA for OTU inferrence \cite{Zafeiropoulos2020}
-%ape R packege \cite{Paradis2004}
-UMAP ordination \cite{mcinnes2018umap-software}
-Numerical ecology analyses with vegan R package \cite{vegan}
+%U-CIE R package for coloring 3 dimentional data \cite{Koutrouli2022}
 
-Python 3.11.4
-R version 4.3.2 \cite{rcoreteam}
-Differential abundance analysis with ANCOM-BC R package \cite{Lin2020,Lin2023}
-U-CIE R package for coloring 3 dimentional data \cite{Koutrouli2022}
-ggplot2 \cite{ggplot22016}
-pheatmap \cite{Kolde2019}
-
-Computations were performed on HPC infrastrure of HCMR \cite{Zafeiropoulos2021}.
+For taxa function annotation we used the manually curated FAPROTAX database and python script \cite{Louca2016}.
+Whereas for the differential abundance analysis with ANCOM-BC2 R package \cite{Lin2023}.
+Numerical ecology analyses,e.g diversity indices, NMDS, PERMANOVA we calculated
+with the vegan R package \cite{vegan}.
+For PCoA ordination we used ape R packege \cite{Paradis2004} and UMAP python library\cite{mcinnes2018umap-software}.
+Visualisation was implemented with ggplot2 \cite{ggplot22016} and pheatmap \cite{Kolde2019}.
+The environment we worked had Python 3.11.4 and R version 4.3.2 \cite{rcoreteam}. 
+Finally, computations were performed on HPC infrastrure of HCMR \cite{Zafeiropoulos2021}.
 
 \section{Results}\label{results}
 
