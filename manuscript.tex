@@ -249,7 +249,7 @@ This study uses the ISD Crete data that have been deposited
 in the European Nucleotide Archive (ENA) at EMBL-EBI under accession number PRJEB21776.
 The raw sequences (fastq files) and metadata (xml files) were downloaded with custom scripts using the ENA API \cite{Yuan2023}.
 Specific information regarding the ISD sampling, DNA extractions, PCR and sequencing
-are discussed here \cite{holm2024}.
+protocols are discussed here \cite{holm2024}.
 
 Amplicon Sequence Variants were inferred using DADA2 \cite{Callahan2016} for 
 filtering, denoising and chimeric reads removal. Normalisation of the reads
@@ -268,31 +268,34 @@ temperature and annual precipitation \cite{Fick2017}.
 We also utilised teh Environmentally Sensitive Areas Index to desertification (ESAI) 
 of Greece dataset \cite{KARAMESOUTI2018266}. Additionally we included the 
 Global Aridity Index and Potential Evapotranspiration Database \cite{zomer2022version}.
-Crete geological bedrock formations were downloaded from IGME.
-Handling and analysis of these data was done with the sf and stars R packages \cite{Pebesma2023}.
+Geological formations shapefiles were downloaded from the geoportal of
+Decentralized Administration of Crete, which were developed by
+Crinno-Emeric Group project\footnote{\url{https://geoportal.apdkritis.gov.gr/gis/apps/storymaps/stories/19690f65abbe4e8ab0141b2fe7261a8c}}.
+Handling and analysis of these data was done with the sf and terra R packages \cite{Pebesma2023}.
 %World Database on Protected Areas (WDPA) \cite{Hanson2022}
-%Average NDVI, 2000-2020
 %Harmonized World Soil Database
-\subsection{Network inferrence}\label{network_inferrence}
 
-The network inferrence was facilitated with FlashWeave 0.19.2 \cite{Tackmann2019}
-in Julia language version 1.9.3 \cite{Julia-2017}. To use FlashWeave we reduced 
+\subsection{Integrative Analysis and Annotations}\label{int_analysis}
+The network inferrence was facilitated with FlashWeave 0.19.2 \cite{Tackmann2019}.
+To use FlashWeave we reduced 
 the abandunce table of the ASVs to keep the ones at the genus or species level.
-In addition, we filtered these taxa that appeared in ### samples and had more than 
-#### mean relative abundance. The subsequent network analyses were carried out
+In addition, we filtered these taxa that appeared in SOSO samples and had more than 
+SOSO mean relative abundance. The subsequent network analyses were carried out
 with the igraph R package \cite{Csardi2006}.
-
-\subsection{Tools}\label{tools}
-%PEMA for OTU inferrence \cite{Zafeiropoulos2020}
-%U-CIE R package for coloring 3 dimentional data \cite{Koutrouli2022}
 
 For taxa function annotation we used the manually curated FAPROTAX database and python script \cite{Louca2016}.
 Whereas for the differential abundance analysis with ANCOM-BC2 R package \cite{Lin2023}.
 Numerical ecology analyses,e.g diversity indices, NMDS, PERMANOVA we calculated
 with the vegan R package \cite{vegan}.
 For PCoA ordination we used ape R packege \cite{Paradis2004} and UMAP python library\cite{mcinnes2018umap-software}.
+
+\subsection{Tools}\label{Coding environment}
+%PEMA for OTU inferrence \cite{Zafeiropoulos2020}
+%U-CIE R package for coloring 3 dimentional data \cite{Koutrouli2022}
+
 Visualisation was implemented with ggplot2 \cite{ggplot22016} and pheatmap \cite{Kolde2019}.
-The environment we worked had Python 3.11.4 and R version 4.3.2 \cite{rcoreteam}. 
+The environment we worked had Python 3.11.4, R version 4.3.2 \cite{rcoreteam}
+and Julia language version 1.9.3 \cite{Julia-2017}in Julia language version 1.9.3 \cite{Julia-2017}.
 Finally, computations were performed on HPC infrastrure of HCMR \cite{Zafeiropoulos2021}.
 
 \section{Results}\label{results}
@@ -305,6 +308,8 @@ Generalists and specialists
 
 
 \subsection{Crete Data Cube}\label{data_cube}
+
+
 
 \subsection{Community drivers}\label{Drivers}
 
@@ -319,6 +324,11 @@ Generalists and specialists
 Differential abundance
 
 \section{Discussion}\label{discussion}
+
+Crete's ecosystems are mostly semi-arid, whereas in the mountain ranges there 
+are areas classified as dry sub-humid and humid. 
+
+Parent material and infuences on soil functions and bacterial communities.
 
 Networks specialists generalists \cite{Barberan2012}
 
@@ -343,23 +353,45 @@ Mountain peaks soil microbes \cite{Adamczyk2019}
 Even though amplicon studies in soil should be interpeted with caution \cite{alteio2021} they 
 can act as early warning signals towards public health conserns \cite{Banerjee2023}.
 
-Future works, shotgun metagenomics, long reads, need for even higher resolution samplings. 
+The pillar of data integration is the unrestricted open data across disciplines and 
+the open source software.
+Deciphering and validating the results presented here requires future work.
+Shotgun metagenomics and metatranscriptomics can uleash the functional potential of
+topsoil along with other advancements like long reads sequencing. Higher resolution
+samplings using grid system will enhance the resolution and also the resampling of
+ISD sites in different time points will provide additional insights to the complex soil 
+functions.
 
 
 
 %%%%%%%%%%%%%%
 
-%\begin{appendices}
-%
-%\section{Appendix 1}\label{appendix1}
-%
-%Nam dui ligula, fringilla a, euismod sodales, sollicitudin vel, wisi. Morbi auctor lorem non justo. Nam lacus libero,
-%pretium at, lobortis vitae, ultricies et, tellus. Donec aliquet, tortor sed accumsan bibendum, erat ligula aliquet magna,
-%vitae ornare odio metus a mi. Morbi ac orci et nisl hendrerit mollis. Suspendisse ut massa. Cras nec ante. Pellentesque
-%a nulla. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam tincidunt
-%urna. Nulla ullamcorper vestibulum turpis. Pellentesque cursus luctus mauris.
-%
-%
+\begin{appendices}
+
+\section{Appendix 1}\label{appendix1}
+
+Nam dui ligula, fringilla a, euismod sodales, sollicitudin vel, wisi. Morbi auctor lorem non justo. Nam lacus libero,
+pretium at, lobortis vitae, ultricies et, tellus. Donec aliquet, tortor sed accumsan bibendum, erat ligula aliquet magna,
+vitae ornare odio metus a mi. Morbi ac orci et nisl hendrerit mollis. Suspendisse ut massa. Cras nec ante. Pellentesque
+a nulla. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam tincidunt
+urna. Nulla ullamcorper vestibulum turpis. Pellentesque cursus luctus mauris.
+
+\begin{table}[]
+    \caption{Taxonomic depth of ASVs and the unique number of taxa of each level.\label{table:asv_taxonomy}}%
+\begin{tabular}{@{}lll@{}}
+classification depth & Total ASV    & Total taxa \\
+Kingdom              & 1974         & 2          \\
+Phylum               & 4034         & 33         \\
+Order                & 38517        & 193        \\
+Class                & 24157        & 83         \\
+Family               & 71355        & 287        \\
+Genus                & 90137        & 1166       \\
+Species              & 9120         & 1338       \\
+Total                & $\sim$239000 & 3102      
+\end{tabular}
+\label{table:asv_taxonomy}
+\end{table}
+
 %\section{Appendix 2}\label{appendix2}
 %\subsubsection{Subsubsection title of first appendix}\label{subsubsec3}
 %
@@ -367,7 +399,7 @@ Future works, shotgun metagenomics, long reads, need for even higher resolution 
 %venenatis arcu wisi vel nisl. Vestibulum diam. Aliquam pellentesque, augue quis sagittis posuere, turpis lacus congue
 %quam, in hendrerit risus eros eget felis.
 %
-%\end{appendices}
+\end{appendices}
 \section{Data and Code}
 The documentation and scripts developed for this study are available in
 \href{https://github.com/savvas-paragkamian/crete_soil_microbiome/}{Crete soil microbiome github repository}.
