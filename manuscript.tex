@@ -309,6 +309,51 @@ Generalists and specialists
 
 \subsection{Crete Data Cube}\label{data_cube}
 
+\begin{sidewaystable*}
+    \caption{Summary of the different spatial layers in Crete in terms of total area, number of samples and microbial diversity.\label{table:data_cube_summary}}
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}llllllll@{\extracolsep{\fill}}}
+\tabcolsep=0pt%
+class                                           & area & category             & samples & taxa richness & asv richness & mean shannon & sd shannon \\
+Arable land                                     & 88   & CLC LABEL2           & 4       & 1518           & 6178          & 4.73          & 0.17        \\
+Artificial, non-agricultural vegetated areas    & 21   & CLC LABEL2           & NA      & NA             & NA            & NA            & NA          \\
+Forests                                         & 300  & CLC LABEL2           & 4       & 1803           & 8663          & 4.91          & 0.18        \\
+Heterogeneous agricultural areas                & 1103 & CLC LABEL2           & 31      & 13701          & 59581         & 4.83          & 0.24        \\
+Industrial, commercial and transport units      & 40   & CLC LABEL2           & 4       & 1760           & 6517          & 4.79          & 0.32        \\
+Inland waters                                   & 7    & CLC LABEL2           & NA      & NA             & NA            & NA            & NA          \\
+Mine, dump and construction sites               & 10   & CLC LABEL2           & NA      & NA             & NA            & NA            & NA          \\
+Open spaces with little or no vegetation        & 411  & CLC LABEL2           & 7       & 3132           & 14568         & 4.85          & 0.21        \\
+Pastures                                        & 59   & CLC LABEL2           & 4       & 1609           & 7535          & 4.85          & 0.14        \\
+Permanent crops                                 & 2368 & CLC LABEL2           & 22      & 9999           & 43833         & 4.88          & 0.18        \\
+Scrub and/or herbaceous vegetation associations & 3798 & CLC LABEL2           & 58      & 24394          & 110127        & 4.76          & 0.29        \\
+Urban fabric                                    & 111  & CLC LABEL2           & 4       & 1765           & 9828          & 4.78          & 0.19        \\
+-                                               & 1    & Geology              & NA      & NA             & NA            & NA            & NA          \\
+J-E                                             & 1347 & Geology              & 22      & 8995           & 41730         & 4.75          & 0.25        \\
+K-E                                             & 248  & Geology              & NA      & NA             & NA            & NA            & NA          \\
+K.k                                             & 1253 & Geology              & 27      & 11277          & 51737         & 4.72          & 0.25        \\
+K.m                                             & 13   & Geology              & NA      & NA             & NA            & NA            & NA          \\
+Mk                                              & 812  & Geology              & 13      & 5618           & 24633         & 4.79          & 0.2         \\
+Mm.I                                            & 1614 & Geology              & 12      & 5259           & 22854         & 4.86          & 0.15        \\
+Ph-T                                            & 1012 & Geology              & 14      & 6720           & 29742         & 4.92          & 0.19        \\
+Q.al                                            & 911  & Geology              & 34      & 15580          & 64851         & 4.91          & 0.27        \\
+T.br                                            & 300  & Geology              & 2       & 625            & 2839          & 4.4           & 0.24        \\
+f                                               & 118  & Geology              & 2       & 720            & 4753          & 4.5           & 0.01        \\
+fo                                              & 318  & Geology              & 2       & 825            & 4606          & 4.65          & 0.04        \\
+ft                                              & 276  & Geology              & 10      & 4062           & 19085         & 4.79          & 0.17        \\
+o                                               & 94   & Geology              & NA      & NA             & NA            & NA            & NA          \\
+N                                               & 163  & Desertification Risk & NA      & NA             & NA            & NA            & NA          \\
+F2                                              & 1945 & Desertification Risk & 53      & 23404          & 103956        & 4.82          & 0.26        \\
+F1                                              & 1518 & Desertification Risk & 22      & 8817           & 41020         & 4.7           & 0.23        \\
+P                                               & 1593 & Desertification Risk & 36      & 16256          & 73256         & 4.86          & 0.19        \\
+C2                                              & 638  & Desertification Risk & 6       & 2113           & 9105          & 4.59          & 0.22        \\
+Other areas                                     & 290  & Desertification Risk & NA      & NA             & NA            & NA            & NA          \\
+F3                                              & 1144 & Desertification Risk & 14      & 5900           & 25362         & 4.82          & 0.28        \\
+C1                                              & 788  & Desertification Risk & 7       & 3191           & 14131         & 4.93          & 0.25        \\
+C3                                              & 238  & Desertification Risk & NA      & NA             & NA            & NA            & NA          \\
+Semi-Arid                                       & 6336 & Aridity class        & 98      & 43064          & 184930        & 4.83          & 0.25        \\
+Dry sub-humid                                   & 1343 & Aridity class        & 32      & 13649          & 65134         & 4.79          & 0.21        \\
+Humid                                           & 545  & Aridity class        & 8       & 2968           & 16766         & 4.55          & 0.19       
+\end{tabular*}
+\end{sidewaystable*}
 
 
 \subsection{Community drivers}\label{Drivers}
@@ -367,14 +412,12 @@ functions.
 %%%%%%%%%%%%%%
 
 \begin{appendices}
+\setcounter{table}{0}
+\renewcommand{\thetable}{A\arabic{table}}
 
 \section{Appendix 1}\label{appendix1}
 
-Nam dui ligula, fringilla a, euismod sodales, sollicitudin vel, wisi. Morbi auctor lorem non justo. Nam lacus libero,
-pretium at, lobortis vitae, ultricies et, tellus. Donec aliquet, tortor sed accumsan bibendum, erat ligula aliquet magna,
-vitae ornare odio metus a mi. Morbi ac orci et nisl hendrerit mollis. Suspendisse ut massa. Cras nec ante. Pellentesque
-a nulla. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam tincidunt
-urna. Nulla ullamcorper vestibulum turpis. Pellentesque cursus luctus mauris.
+
 
 \begin{table}[]
     \caption{Taxonomic depth of ASVs and the unique number of taxa of each level.\label{table:asv_taxonomy}}%
@@ -424,7 +467,7 @@ Software: SP, JH, HZ;
 Supervision: LS, EP, GK, PS;
 Validation: JH, CP, CC, HZ, PS, DT, MS, LS;
 Visualization: SP, JH;
-Writing – original draft: SP, EP, GK;
+Writing – original draft: SP;
 Writing – review and editing: All authors.
 
 \section{Acknowledgments}
